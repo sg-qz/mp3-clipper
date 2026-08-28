@@ -1,0 +1,11 @@
+# 依赖（自动生成，可随时 npm install 重建，体积大且不入库）
+node_modules/
+
+# 构建产物（npm run build 生成，可重建）
+build-out/
+dist/
+
+# 本地/系统杂项
+*.local
+.DS_Store
+.vite/
