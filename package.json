@@ -1,0 +1,53 @@
+{
+  "name": "mp3-clipper",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "electron .",
+    "pack": "npm run build && electron-builder --win portable",
+    "dist": "npm run build && electron-builder --win portable"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.20",
+    "@mui/material": "^5.15.20",
+    "jszip": "^3.10.1",
+    "music-metadata-browser": "^2.5.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6",
+    "vite": "^5.3.4"
+  },
+  "build": {
+    "appId": "com.mp3clipper.app",
+    "productName": "MP3剪辑器",
+    "files": [
+      "build-out/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build-out"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "artifactName": "MP3剪辑器-${version}-portable.exe"
+    }
+  }
+}
